@@ -33,43 +33,35 @@
   margin-top: 10px;
 }
 .team-social-links {
+  @extend %social-link-set;
   margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .team-social-links-items {
-  display: flex;
-  border-radius: 50%;
+  @extend %social-link;
   background-color: #ffffff;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-}
-.team-social-links-items:not(:last-child) {
-  margin-right: 10px;
-}
-.team-social-links-items:hover,
-.team-social-links-items:focus {
-  background-color: $accent-color;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
-}
-.team-social-links-items:hover svg,
-.team-social-links-items:focus svg {
-  fill: #ffffff;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
 
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
-}
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover svg,
+  &:focus svg {
+    fill: #ffffff;
 
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
 .team-social {
-  width: 20px;
-  height: 20px;
+  @extend %social-link-svg;
   fill: #afb1b8;
 }
 .team-list-cards {

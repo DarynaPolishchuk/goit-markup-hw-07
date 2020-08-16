@@ -12,20 +12,7 @@
   display: flex;
   align-items: center;
 }
-.logo {
-  font-family: $secondary-font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
-  color: #000000;
-  margin-right: 85px;
-}
 
-.logo-web {
-  color: $accent-color;
-}
 .navigation-list-item {
   display: block;
   position: relative;
@@ -46,16 +33,6 @@
   border-radius: 2px;
   bottom: 0px;
 }
-.underline-port::after {
-  display: block;
-  position: absolute;
-  content: "";
-  background-color: $accent-color;
-  width: 77px;
-  height: 4px;
-  border-radius: 2px;
-  bottom: 0px;
-}
 
 .header .container {
   display: flex;
@@ -72,14 +49,15 @@
   line-height: 16px;
   letter-spacing: 0.02em;
   color: $secondary-color;
-}
-.navigation:hover,
-.navigation:focus {
-  color: $accent-color;
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: $accent-color;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .address > a {
@@ -90,27 +68,30 @@
   letter-spacing: 0.02em;
   text-decoration: none;
   color: $secondary-color;
-}
-.address > a:hover,
-.address > a:focus {
-  color: $accent-color;
-  fill: #2196f3;
 
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
-}
-.icon-header:hover,
-.icon-header:focus {
-  fill: $accent-color;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: #2196f3;
 
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
-.address > a:not(:last-child) {
-  margin-right: 30px;
-}
+
 .icon-header {
   margin-right: 10px;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
