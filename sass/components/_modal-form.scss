@@ -22,15 +22,16 @@
   height: 581px;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: $white-color;
   padding: 40px;
   position: relative;
   border-radius: 4px;
+  &:focus {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+  }
 }
-.modal-form:focus {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-}
+
 /* Стилизация заголовка формы */
 .modal-form-title {
   margin-bottom: 30px;
@@ -48,16 +49,17 @@
   border-radius: 4px;
   padding-left: 42px;
   cursor: pointer;
-}
-/* Смена цвета бордера у инпутов при фокусе */
-.modal-form-input:focus {
-  outline: none;
-  padding-left: 42px;
-  border: 1px solid #2196f3;
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+
+  /* Смена цвета бордера у инпутов при фокусе */
+  &:focus {
+    outline: none;
+    padding-left: 42px;
+    border: 1px solid #2196f3;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
 }
 
 /*ЛЕЙБЛЫ */
@@ -71,7 +73,7 @@
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
-  color: #757575;
+  color: $subtext-color;
   transform: translateY(-50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -132,6 +134,20 @@ modal-form-input когда у того не показывается плейс
   transform: translateX(-35%);
 }
 
+/* стилизация плейсхолдера в модал меседж */
+.modal-message::placeholder {
+  padding: 12px 16px;
+}
+
+/* Стилизация соглашения на рассылку */
+.modal-form-optional-label {
+  margin-bottom: 30px;
+}
+
+/* Стилизация кнопки на форме */
+.modal-form-btn {
+  transform: translateX(60%);
+}
 /* ТЕКСТ АРЕА */
 /* Позиционирование Лейбла в текстареа */
 .modal-form-label-textarea {
@@ -144,7 +160,7 @@ modal-form-input когда у того не показывается плейс
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  color: #757575;
+  color: $subtext-color;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     font-size 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -163,16 +179,6 @@ modal-form-input когда у того не показывается плейс
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* TEXTAREA при фокусе
- (смена бордера и позиционирование коментария)*/
-.modal-message:focus {
-  border: 1px solid #2196f3;
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-}
-
 /* Стилизация rextarea */
 .modal-message {
   width: 100%;
@@ -183,6 +189,16 @@ modal-form-input когда у того не показывается плейс
   margin-bottom: 20px;
   outline: none;
   cursor: pointer;
+
+  /* TEXTAREA при фокусе
+ (смена бордера и позиционирование коментария)*/
+  &:focus {
+    border: 1px solid #2196f3;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+  }
 }
 
 /* СТИЛИЗАЦИЯ ЧЕКБОКСА */
@@ -237,12 +253,15 @@ modal-form-input когда у того не показывается плейс
 .modal-form-option-span {
   font-size: 14px;
   line-height: 0.88;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.03em;
   font-family: $main-font;
   font-weight: 400;
-  color: #757575;
+  color: $subtext-color;
   margin-left: 25px;
   cursor: pointer;
+  & > a {
+    color: $accent-color;
+  }
 }
 
 .modal-form-btn:hover,
@@ -263,21 +282,22 @@ modal-form-input когда у того не показывается плейс
   top: 8px;
   right: 8px;
   cursor: pointer;
-  background: #ffffff;
+  background: $white-color;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   outline: none;
   fill: $subtext-color;
+
+  /* Фокус на кнопку закрытия */
+  &:focus,
+  &:hover {
+    fill: $accent-color;
+  }
 }
 /* Кнопка закрытия */
 .modal-close-btn-svg {
   width: 11px;
   height: 11px;
-}
-/* Фокус на кнопку закрытия */
-.modal-close-btn:focus,
-.modal-close-btn:hover {
-  fill: $accent-color;
 }
 
 /* что бы спрятать модальное окно */

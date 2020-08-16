@@ -31,10 +31,10 @@
 .what-we-do-list {
   display: flex;
   justify-content: space-between;
-}
-.what-we-do-list > li {
-  position: relative;
-}
-.what-we-do-list > li:not(:last-child) {
-  margin-right: 30px;
+  & > li {
+    position: relative;
+  }
+  & > li:not(:last-child) {
+    margin-right: 30px;
+  }
 }

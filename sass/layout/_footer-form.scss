@@ -32,30 +32,7 @@
   }
 }
 
-/* ФОРМА НА СТРАНИЦЕ INDEX */
-/* стилизация плейсхолдера в модал меседж */
-.modal-message::placeholder {
-  padding: 12px 16px;
-}
 
-/* Стилизация соглашения на рассылку */
-.modal-form-optional-label {
-  margin-bottom: 30px;
-}
-
-/*Стилизация соглашения на рассылку */
-.modal-form-option-span {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.03em;
-}
-.modal-form-option-span > a {
-  color: $accent-color;
-}
-/* Стилизация кнопки на форме */
-.modal-form-btn {
-  transform: translateX(60%);
-}
 /* Инпут для футера для отправки мейла */
 .footer-block-call-to-action {
   width: 358px;

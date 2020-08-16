@@ -7,18 +7,30 @@
 .customers-list {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+
+  & > li {
+    display: flex;
+    width: 170px;
+    height: 90px;
+    border: 1px solid #afb1b8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      border-color: $accent-color;
+
+      transition-property: border-color;
+      transition-duration: 250ms;
+      transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
 }
-.customers-list > li {
-  display: flex;
-  width: 170px;
-  height: 90px;
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-}
+
 .custumers-comany {
   fill: #afb1b8;
 }
@@ -28,15 +40,6 @@
   fill: $accent-color;
 
   transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
-}
-/* ховер на компании на бордер */
-.customers-list > li:hover,
-.customers-list > li:focus {
-  border-color: $accent-color;
-
-  transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: ubic-bezier(0.4, 0, 0.2, 1);
 }
